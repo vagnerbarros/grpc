@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package cadastro;
+
+service Cadastro {
+  rpc cadastrarUsuario (CadastrarUsuarioRequest) returns (CadastrarUsuarioResponse) {}
+}
+
+message CadastrarUsuarioRequest {
+  string cpf = 1;
+  string nome = 2;
+  string cep = 3;
+  string rua = 4;
+  string bairro = 5;
+  string cidade = 6;
+  string estado = 7;
+}
+
+message CadastrarUsuarioResponse {
+  int32 status = 1;
+  string message = 2;
+}
