@@ -8,7 +8,7 @@ class CadastroUsuario{
 
       let existeCpf = repositorio.buscarCpf(usuario.cpf);
       if(!existeCpf){
-        repositorio.cadastrar(usuario);
+        return repositorio.cadastrar(usuario);
       }
       else{
         throw new Error('CPF já cadastrado');

@@ -9,7 +9,9 @@ class RepositorioUsuario{
   cadastrar(usuario){
 
     let novoUsuario = new Usuario(usuario);
+    novoUsuario.id = this.usuarios.length + 1;
     this.usuarios.push(novoUsuario);
+    return novoUsuario;
   }
 
   listar(){
@@ -24,7 +26,9 @@ class RepositorioUsuario{
       this.usuarios.splice(index, 1);
     }
     else{
-      throw new Error('CPF não encontrado');
+      let error = new Error('CPF não encontrado');
+      error.code = 400;
+      throw error;
     }
   }
 
@@ -41,7 +45,9 @@ class RepositorioUsuario{
       usuarioAtual = usuario;
     }
     else{
-      throw new Error('Usuário não encontrado');
+      let error = new Error('Usuário não encontrado');
+      error.code = 400;
+      throw error;
     }
   }
 }

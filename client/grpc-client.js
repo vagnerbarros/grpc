@@ -17,17 +17,29 @@ function main() {
   
   let client = new cadastro_proto.Cadastro('localhost:50051', grpc.credentials.createInsecure());
 
-  let usuario = {
-    cpf: '1223332323',
-    nome: 'Vagner',
-    cep: '55024130',
-    rua: 'teste',
-    bairro: 'bairro',
-    cidade: 'caruaru',
-    estado: 'PE'
+  let dadosUsuario = {
+    usuario: {
+      cpf: '1223332323',
+      nome: 'Vagner',
+      cep: '55442333',
+      rua: 'teste',
+      bairro: 'bairro',
+      cidade: 'caruaru',
+      estado: 'PE'
+    }
   }
-  client.cadastrarUsuario(usuario, function(err, response) {
-    console.log('Resultado:', response.message);
+  client.cadastrarUsuario(dadosUsuario, function(err, response) {
+
+    console.log(response);
+    // if(response.status === 200){
+
+    //   console.log('Usuario Cadastrado com Sucesso');
+    //   console.log(response.)
+    // }
+    // else{
+
+    //   console.log('Resultado:', response.message);
+    // }
   });
 }
 

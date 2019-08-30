@@ -2,6 +2,7 @@
 class Usuario{
 
   constructor(usuario){
+    this.id = 0;
     this.cpf = usuario.cpf;
     this.nome = usuario.nome;
     this.cep = usuario.cep;
@@ -10,8 +11,6 @@ class Usuario{
     this.cidade = usuario.cidade;
     this.estado = usuario.estado;
   }
-
-  
 }
 
 module.exports = Usuario;

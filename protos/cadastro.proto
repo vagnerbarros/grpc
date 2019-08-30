@@ -7,6 +7,18 @@ service Cadastro {
 }
 
 message CadastrarUsuarioRequest {
+  Usuario usuario = 1;
+}
+
+message CadastrarUsuarioResponse {
+
+  int32 status = 1;
+  string message = 2;
+  Usuario usuario = 3;
+}
+
+message Usuario{
+  int32 id = 0;
   string cpf = 1;
   string nome = 2;
   string cep = 3;
@@ -14,9 +26,4 @@ message CadastrarUsuarioRequest {
   string bairro = 5;
   string cidade = 6;
   string estado = 7;
-}
-
-message CadastrarUsuarioResponse {
-  int32 status = 1;
-  string message = 2;
 }

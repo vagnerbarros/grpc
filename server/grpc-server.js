@@ -17,17 +17,18 @@ function cadastrarUsuario(call, callback) {
   
   try{
 
-    cadUsuario.cadastrar(call.request);
-    let usuariosCadastrados = cadUsuario.listar();
+    let usuarioCadastrado = cadUsuario.cadastrar(call.request.usuario);
     callback(null, {
       status: 200,
-      message: `${usuariosCadastrados.length} usuários cadastrados`
+      message: 'Usuário Cadastrado com Sucesso',
+      usuario: usuarioCadastrado
     });
   }
   catch(err){
     callback(null, {
       status: 500,
-      message: err.toString()
+      message: err.message,
+      usuario: undefined
     });
   }
   
